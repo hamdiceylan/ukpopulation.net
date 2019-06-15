@@ -28,12 +28,10 @@ class Layout extends React.Component {
             {title}
           </Link>
         </h3>
-        <ul>
-          <li>Countries</li>
-          <li>Cities</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
+        <Link to="countries">Countries</Link>
+        <Link to="cities">Cities</Link>
+        <Link to="about">About</Link>
+        <Link to="contact">Contact</Link>
       </div>
     )
     return (
