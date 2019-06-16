@@ -12,7 +12,7 @@ class BlogIndex extends Component {
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
-        <div>Home Page with failin test</div>
+        <div>Home Page</div>
       </Layout>
     )
   }

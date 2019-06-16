@@ -6,7 +6,6 @@ import Layout from "../layout"
 describe("Layout", () => {
   it("renders correctly", () => {
     const tree = renderer.create(<Layout siteTitle="Uk population" />).toJSON()
-    // expect(tree).toMatchSnapshot()
-    expect(true).toBe(false)
+    expect(tree).toMatchSnapshot()
   })
 })
