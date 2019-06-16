@@ -7,7 +7,6 @@ class Layout extends React.Component {
   render() {
     const { title, children } = this.props
     let header
-
     header = (
       <div>
         <h3
