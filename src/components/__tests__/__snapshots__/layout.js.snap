@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "marginLeft": "auto",
+      "marginRight": "auto",
+      "maxWidth": "42rem",
+      "padding": "2.625rem 1.3125rem",
+    }
+  }
+>
+  <header>
+    <div>
+      <h3
+        style={
+          Object {
+            "fontFamily": "Montserrat, sans-serif",
+            "marginTop": 0,
+          }
+        }
+      >
+        <a
+          href="/"
+          style={
+            Object {
+              "boxShadow": "none",
+              "color": "inherit",
+              "textDecoration": "none",
+            }
+          }
+        />
+      </h3>
+      <a
+        href="countries"
+      >
+        Countries
+      </a>
+      <a
+        href="cities"
+      >
+        Cities
+      </a>
+      <a
+        href="about"
+      >
+        About
+      </a>
+      <a
+        href="contact"
+      >
+        Contact
+      </a>
+    </div>
+  </header>
+  <main />
+  <footer>
+    © 
+    2019
+     
+    <a
+      href="https://www.ukpopulation.net"
+    >
+      uk population
+    </a>
+  </footer>
+</div>
+`;
