@@ -18,6 +18,9 @@ commands:
           paths:
             - ./node_modules
       - run:
+          name: Run Tests
+          command: yarn test
+      - run:
           name: Gatsby Build
           command: yarn build
 workflows:
