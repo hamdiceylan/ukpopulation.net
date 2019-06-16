@@ -1,54 +1,61 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
 
-import { rhythm } from "../utils/typography"
+const MainContainer = styled.div`
+  display: grid;
+  grid-template-areas:
+    'header'
+    'container'
+    'footer';
+  grid
+`
+
+const Header = styled.div`
+  grid-area: header;
+  min-height: 200px;
+`
+const Container = styled.div`
+  grid-area: container;
+  min-height: 200px;
+`
+const Footer = styled.div`
+  grid-area: footer;
+  min-height: 200px;
+`
+
+const Menu = styled.div`
+  display: flex;
+  justify-content: flex-start;
+`
+
+const MenuItem = styled(Link)`
+  padding: 10px;
+  display: flex;
+  box-shadow: none;
+`
 
 class Layout extends React.Component {
   render() {
-    const { title, children } = this.props
-    let header
-    header = (
-      <div>
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-        <Link to="countries">Countries</Link>
-        <Link to="cities">Cities</Link>
-        <Link to="about">About</Link>
-        <Link to="contact">Contact</Link>
-      </div>
-    )
+    const { children } = this.props
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
-        <header>{header}</header>
-        <main>{children}</main>
-        <footer>
+      <MainContainer>
+        <Header>
+          <Menu>
+            <MenuItem to="/">Home</MenuItem>
+            <MenuItem to="countries">Countries</MenuItem>
+            <MenuItem to="cities">Cities</MenuItem>
+            <MenuItem to="about">About</MenuItem>
+            <MenuItem to="contact">Contact</MenuItem>
+          </Menu>
+        </Header>
+        <Container>{children}</Container>
+        <Footer>
           © {new Date().getFullYear()}
           {` `}
           <a href="https://www.ukpopulation.net">uk population</a>
-        </footer>
-      </div>
+        </Footer>
+      </MainContainer>
     )
   }
 }

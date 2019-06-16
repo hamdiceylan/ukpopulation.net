@@ -5,17 +5,20 @@ async function createBlogPage(graphql, createPage) {
   const pageData = await graphql(
     `
       {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
+        allMarkdownRemark {
           edges {
             node {
+              id
+              wordCount {
+                paragraphs
+                sentences
+                words
+              }
               fields {
                 slug
               }
-              frontmatter {
-                title
+              internal {
+                content
               }
             }
           }
@@ -30,18 +33,10 @@ async function createBlogPage(graphql, createPage) {
 
   const posts = pageData.data.allMarkdownRemark.edges
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
-
+  posts.forEach(post => {
     createPage({
       path: post.node.fields.slug,
       component: blogPost,
-      context: {
-        slug: post.node.fields.slug,
-        previous,
-        next,
-      },
     })
   })
 

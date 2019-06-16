@@ -1,4 +1,4 @@
-const createBlogPage = require("./gatsby/createBlogPage")
+const createBlogPage = require("./src/gatsby/createBlogPage")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions }) => {
