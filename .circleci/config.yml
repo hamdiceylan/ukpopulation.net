@@ -42,7 +42,7 @@ jobs:
       - gatsby-build
       - run:
           name: Netlify Deploy
-          command: ./node_modules/.bin/netlify deploy --dir=public --site ${YOUR_NETLIFY_SITE_ID} --auth ${A_NETLIFY_ACCESS_TOKEN}
+          command: npm install netlify-cli -g && ./node_modules/.bin/netlify deploy --dir=public --site ${YOUR_NETLIFY_SITE_ID} --auth ${A_NETLIFY_ACCESS_TOKEN}
   release:
     executor: node-executor
     working_directory: ~/repo
@@ -50,4 +50,4 @@ jobs:
       - gatsby-build
       - run:
           name: Netlify Deploy
-          command: ./node_modules/.bin/netlify deploy --prod --dir=public --site ${YOUR_NETLIFY_SITE_ID} --auth ${A_NETLIFY_ACCESS_TOKEN}
+          command: npm install netlify-cli -g && ./node_modules/.bin/netlify deploy --prod --dir=public --site ${YOUR_NETLIFY_SITE_ID} --auth ${A_NETLIFY_ACCESS_TOKEN}
